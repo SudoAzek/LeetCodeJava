@@ -1,6 +1,6 @@
 package daily_challenge;
 
-public class NumberOf1Bits {
+public class D01_NumberOf1Bits {
     public static void main(String[] args) {
         NumberOf1BitsSolution_1 numberOf1BitsSolution_1 = new NumberOf1BitsSolution_1();
         NumberOf1BitsSolution_2 numberOf1BitsSolution_2 = new NumberOf1BitsSolution_2();
