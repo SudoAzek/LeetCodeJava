@@ -10,8 +10,8 @@ package daily_challenge;
 
 public class D03_LinkedListCycle {
     public static void main(String[] args) {
-        D03_LinkedListCycleSolution_1 d03_linkedListCycleSolution_1 = new D03_LinkedListCycleSolution_1();
-//        d03_linkedListCycleSolution_1.hasCycle()
+        LinkedListCycleSolution_1 linkedListCycleSolution_1 = new LinkedListCycleSolution_1();
+//        linkedListCycleSolution_1.hasCycle()
     }
 }
 
@@ -28,7 +28,7 @@ public class D03_LinkedListCycle {
      }
  }
 
- class D03_LinkedListCycleSolution_1 {
+ class LinkedListCycleSolution_1 {
      public boolean hasCycle(ListNode head) {                                     
          ListNode slower = head;                                                  
          ListNode faster = head;                                                  

@@ -25,7 +25,7 @@ public class D06_BinaryTreeRightSideView {
 //    }
 //}
 
-class D06_BinaryTreeRightSideViewSolution {
+class BinaryTreeRightSideViewSolution {
     public List<Integer> rightSideView(TreeNode root) {
         if(root == null) return new ArrayList<>();
 

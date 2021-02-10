@@ -6,8 +6,8 @@ import static java.lang.Integer.min;
 
 public class D07_ShortestDistanceToCharacter {
     public static void main(String[] args) {
-        D07_ShortestDistanceToCharacterSolution d07_shortestDistanceToCharacterSolution = new D07_ShortestDistanceToCharacterSolution();
-        System.out.println(Arrays.toString(d07_shortestDistanceToCharacterSolution.shortestToChar("loveleetcode", 'e')));
+        ShortestDistanceToCharacterSolution shortestDistanceToCharacterSolution = new ShortestDistanceToCharacterSolution();
+        System.out.println(Arrays.toString(shortestDistanceToCharacterSolution.shortestToChar("loveleetcode", 'e')));
     }
 }
 
@@ -27,7 +27,7 @@ class Solution:
  */
 
 
-class D07_ShortestDistanceToCharacterSolution {
+class ShortestDistanceToCharacterSolution {
     public int[] shortestToChar(String s, char c) {
         int l = s.length();
         int[] ans = new int[l];

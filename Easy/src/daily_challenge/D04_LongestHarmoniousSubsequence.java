@@ -6,7 +6,7 @@ public class D04_LongestHarmoniousSubsequence {
     }
 }
 
-class D04_LongestHarmoniousSubsequenceSolution_1 {
+class LongestHarmoniousSubsequenceSolution_1 {
     public int findLHS(int[] nums) {
         return 1;
     }

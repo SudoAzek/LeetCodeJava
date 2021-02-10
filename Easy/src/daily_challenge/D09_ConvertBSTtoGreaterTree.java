@@ -1,31 +1,35 @@
 package daily_challenge;
 
 public class D09_ConvertBSTtoGreaterTree {
-    /**
-     * Definition for a binary tree node.
-     */
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
+    public static void main(String[] args) {
 
     }
 }
+/*
 
-class D09_ConvertBSTtoGreaterTreeSolution {
+* Definition for a binary tree node.
+
+public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode() {
+    }
+
+    TreeNode(int val) {
+        this.val = val;
+    }
+
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+
+}
+ */
+class ConvertBSTtoGreaterTreeSolution {
     public TreeNode convertBST(TreeNode root) {
         calc(root, 0);
         return root;

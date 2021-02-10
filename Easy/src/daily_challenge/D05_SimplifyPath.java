@@ -9,7 +9,7 @@ public class D05_SimplifyPath {
     }
 }
 
-class Solution {
+class SimplifyPathSolution {
     public String simplifyPath(String path) {
         String[] elements = path.split("/");
         Deque<String> folders = new LinkedList<>();
