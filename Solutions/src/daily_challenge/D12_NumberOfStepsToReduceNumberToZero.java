@@ -5,9 +5,11 @@ public class D12_NumberOfStepsToReduceNumberToZero {
         NumberOfStepsToReduceNumberToZeroSolution sol = new NumberOfStepsToReduceNumberToZeroSolution();
         NumberOfStepsToReduceNumberToZeroSolution_1 sol1 = new NumberOfStepsToReduceNumberToZeroSolution_1();
         NumberOfStepsToReduceNumberToZeroSolution_2 sol2 = new NumberOfStepsToReduceNumberToZeroSolution_2();
+        NumberOfStepsToReduceNumberToZeroSolution_3 sol3 = new NumberOfStepsToReduceNumberToZeroSolution_3();
         System.out.println(sol.numberOfSteps(8));
         System.out.println(sol1.numberOfSteps(8));
         System.out.println(sol2.numberOfSteps(8));
+        System.out.println(sol3.numberOfSteps(8));
     }
 
 }
@@ -48,5 +50,15 @@ class NumberOfStepsToReduceNumberToZeroSolution_2 {
             return num;
         }
         return numberOfSteps(num >> 1) + (((num & 1) == 1) ? 2 : 1);
+    }
+}
+
+class NumberOfStepsToReduceNumberToZeroSolution_3 {
+    public int numberOfSteps(int num) {
+        int count = 0;
+        for(char ch : Integer.toBinaryString(num).toCharArray()) {
+            count = (int)ch - 48 + 1 + count;
+        }
+        return count - 1;
     }
 }
