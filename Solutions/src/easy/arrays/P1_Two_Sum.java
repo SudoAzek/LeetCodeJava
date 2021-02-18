@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class P1_Two_Sum {
     public static void main(String[] args) {
-        Solution_1 solution_1 = new Solution_1();
+        TwoSumSolution solution_1 = new TwoSumSolution();
         int[] arr = {2, 7, 11, 15};
         int target = 18;
         System.out.println(Arrays.toString(solution_1.twoSum(arr, target)));
@@ -15,7 +15,25 @@ public class P1_Two_Sum {
  * to target. May assume that each input would have exactly one solution, and you may not use the same element twice.
  * Can return the answer in any order. */
 
-class Solution_1 {
+class TwoSumSolution {
+    public int[] twoSum(int[] nums, int target) {
+        int l = 0;
+        int r = nums.length - 1;
+        int[] T;
+        while(l < r) {
+            if (target < nums[r]) {
+                r--;
+            } else if (nums[l] + nums[r] == target) {
+                return new int[] {nums[l], nums[r]};
+            } else {
+                l++;
+            }
+        }
+        return null;
+    }
+}
+
+class TwoSumSolution_1 {
     // Approach 1: Brute Force
     // The brute force approach is simple. Loop through each element x and find if there is
     // another value that equals to target - x
@@ -29,6 +47,5 @@ class Solution_1 {
         }
         throw new IllegalArgumentException("No two sum solution");
     }
-}
 
-class Solution_2 {}
+}
