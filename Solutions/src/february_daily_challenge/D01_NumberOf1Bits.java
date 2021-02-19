@@ -1,4 +1,4 @@
-package daily_challenge;
+package february_daily_challenge;
 
 public class D01_NumberOf1Bits {
     public static void main(String[] args) {

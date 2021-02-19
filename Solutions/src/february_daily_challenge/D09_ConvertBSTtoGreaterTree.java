@@ -1,4 +1,4 @@
-package daily_challenge;
+package february_daily_challenge;
 
 public class D09_ConvertBSTtoGreaterTree {
     public static void main(String[] args) {

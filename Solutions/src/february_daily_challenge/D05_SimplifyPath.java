@@ -1,4 +1,4 @@
-package daily_challenge;
+package february_daily_challenge;
 
 import java.util.Deque;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package daily_challenge;
+package february_daily_challenge;
 
 public class D12_NumberOfStepsToReduceNumberToZero {
     public static void main(String[] args) {
