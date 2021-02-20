@@ -17,14 +17,29 @@ public class P1_Two_Sum {
 
 class TwoSumSolution {
     public int[] twoSum(int[] nums, int target) {
+        Arrays.sort(nums);
+        int l = 0;
+        int r = nums.length - 1;
+
+        while (l < r) {
+            if (nums[l] + nums[r] == target) return new int[]{l, r};
+            else if (nums[l] + nums[r] > target) r--;
+            else if (nums[l] + nums[r] < target) l++;
+        }
+        return nums;
+    }
+}
+
+class TwoSumSolution_2 {
+    public int[] twoSum(int[] nums, int target) {
         int l = 0;
         int r = nums.length - 1;
         int[] T;
-        while(l < r) {
+        while (l < r) {
             if (target < nums[r]) {
                 r--;
             } else if (nums[l] + nums[r] == target) {
-                return new int[] {nums[l], nums[r]};
+                return new int[]{nums[l], nums[r]};
             } else {
                 l++;
             }
