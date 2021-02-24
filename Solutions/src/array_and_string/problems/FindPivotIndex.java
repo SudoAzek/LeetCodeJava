@@ -3,14 +3,14 @@ package array_and_string.problems;
 public class FindPivotIndex {
     public static void main(String[] args) {
         FindPivotIndexSolution sol = new FindPivotIndexSolution();
-        System.out.println(sol.pivotIndex(new int[]{-1,-1,-1,-1,-1,0}));
+        System.out.println(sol.pivotIndex(new int[]{-1, -1, -1, -1, -1, 0}));
     }
 }
 
 class FindPivotIndexSolution {
     public int pivotIndex(int[] nums) {
         int sum = 0, leftsum = 0;
-        for (int x: nums) sum += x;
+        for (int x : nums) sum += x;
         for (int i = 0; i < nums.length; ++i) {
             if (leftsum == sum - leftsum - nums[i]) return i;
             leftsum += nums[i];
@@ -26,10 +26,10 @@ class FindPivotIndexSolution_1 {
         int leftSum = nums[0];
         int rightSum = nums[nums.length - 1];
         for (int i = 1; i < nums.length - 1; i++) {
-            if(i >= right) return -1;
-            if(leftSum == rightSum) return i;
+            if (i >= right) return -1;
+            if (leftSum == rightSum) return i;
 
-            if(leftSum < rightSum) {
+            if (leftSum < rightSum) {
                 leftSum += nums[i];
             } else {
                 rightSum += nums[--right];
