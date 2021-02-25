@@ -1,4 +1,4 @@
-package array_and_string.problems;
+package array_and_string.introduction_to_array.problems;
 
 public class FindPivotIndex {
     public static void main(String[] args) {
