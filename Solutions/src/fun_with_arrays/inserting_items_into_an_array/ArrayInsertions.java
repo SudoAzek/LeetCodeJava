@@ -9,12 +9,12 @@ package fun_with_arrays.inserting_items_into_an_array;
 
 public class ArrayInsertions {
     public static void main(String[] args) {
-        ArrayOperations arrayOperations = new ArrayOperations();
-        arrayOperations.createAndInsert();
+        ArrayInsertionOperations arrayInsertionOperations = new ArrayInsertionOperations();
+        arrayInsertionOperations.createAndInsert();
     }
 }
 
-class ArrayOperations {
+class ArrayInsertionOperations {
     void createAndInsert() {
         // Declare an integer array of 6 elements
         int[] intArray = new int[6];
