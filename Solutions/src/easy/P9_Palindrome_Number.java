@@ -1,4 +1,4 @@
-package easy.math;
+package easy;
 
 public class P9_Palindrome_Number {
     public static void main(String[] args) {

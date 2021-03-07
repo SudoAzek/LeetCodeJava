@@ -1,4 +1,4 @@
-package easy.math;
+package easy;
 
 public class P7_Reverse_Integer {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package easy.math;
+package easy;
 
 public class P441_ArrangingCoins {
     public static void main(String[] args) {
