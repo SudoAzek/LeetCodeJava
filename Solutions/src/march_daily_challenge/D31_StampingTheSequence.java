@@ -43,3 +43,53 @@ class StampingTheSequenceSolution {
         return answer;
     }
 }
+
+class StampingTheSequenceSolution2 {
+    public int[] movesToStamp(String stamp, String target) {
+        List<Integer> res = new ArrayList<>();
+        char[] s = stamp.toCharArray();
+        char[] t = target.toCharArray();
+        boolean[] v = new boolean[t.length];
+        int repCnt = 0;
+        while (repCnt < t.length) {
+            boolean replaced = false;
+            for (int i = 0; i + s.length - 1 < t.length; i++) {
+                if (!v[i] && canReplace(s, t, i)) {
+                    v[i] = true;
+                    replaced = true;
+                    repCnt += replace(s, t, i);
+                    res.add(i);
+
+                    if (repCnt == t.length) break;
+                }
+            }
+            if (!replaced) break;
+        }
+
+        if (repCnt < t.length) return new int[0];
+
+        int[] r = new int[res.size()];
+        for (int i = res.size() - 1; i >= 0; i--) {
+            r[res.size() - 1 - i] = res.get(i);
+        }
+        return r;
+    }
+
+    public boolean canReplace(char[] s, char[] t, int si) {
+        for (int i = si; i < si + s.length; i++) {
+            if (t[i] != s[i - si] && t[i] != '*') return false;
+        }
+        return true;
+    }
+
+    public int replace(char[] s, char[] t, int si) {
+        int cnt = 0;
+        for (int i = si; i < si + s.length; i++) {
+            if (t[i] != '*') {
+                t[i] = '*';
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+}
