@@ -8,13 +8,22 @@ public class D01_PalindromeLinkedList {
 /**
  * Definition for singly-linked list.
  */
-  class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-  }
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+}
 
 class PalindromeLinkedListSolution1 {
     public boolean isPalindrome(ListNode head) {
@@ -51,5 +60,21 @@ class PalindromeLinkedListSolution2 {
         head.next.next = head;
         head.next = null;
         return reversed;
+    }
+}
+
+class Solution {
+    public int findMaxForm(String[] strs, int m, int n) {
+        int[][] dp = new int[m + 1][n + 1];
+        for (String str : strs) {
+            int zeros = 0, ones = 0;
+            for (char c : str.toCharArray())
+                if (c == '0') zeros++;
+                else ones++;
+            for (int i = m; i >= zeros; i--)
+                for (int j = n; j >= ones; j--)
+                    dp[i][j] = Math.max(dp[i][j], dp[i - zeros][j - ones] + 1);
+        }
+        return dp[m][n];
     }
 }
