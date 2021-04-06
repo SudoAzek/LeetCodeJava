@@ -3,6 +3,10 @@ package april_daily_challenge;
 import java.util.Stack;
 
 public class D01_PalindromeLinkedList {
+    public static void main(String[] args) {
+        PalindromeLinkedListSolution1 solution1 = new PalindromeLinkedListSolution1();
+        System.out.println(solution1.isPalindrome(new ListNode()));
+    }
 }
 
 /**
