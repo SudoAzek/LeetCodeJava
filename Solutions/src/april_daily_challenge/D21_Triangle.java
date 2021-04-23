@@ -28,3 +28,22 @@ class TriangleSolution {
         return Collections.min(triangle.get(triangle.size() - 1));
     }
 }
+
+class TriangleSolution1 {
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int len = triangle.size();
+        int[][] dp = new int[len][len];
+        return recur(triangle, 0, 0, dp);
+    }
+
+    public int recur(List<List<Integer>> triangle, int row, int i, int[][] dp) {
+        if (row == triangle.size()) {
+            return 0;
+        }
+        if (dp[row][i] != 0) {
+            return dp[row][i];
+        }
+        dp[row][i] = Math.min(triangle.get(row).get(i) + recur(triangle, row + 1, i, dp), triangle.get(row).get(i) + recur(triangle, row + 1, i + 1, dp));
+        return dp[row][i];
+    }
+}
