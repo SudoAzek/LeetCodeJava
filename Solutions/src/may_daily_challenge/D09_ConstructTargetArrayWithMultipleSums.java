@@ -65,3 +65,30 @@ class ConstructTargetArrayWithMultipleSumsSolution2 {
         return isPossible(target);
     }
 }
+
+class ConstructTargetArrayWithMultipleSumsSolution3 {
+    public boolean isPossible(int[] target) {
+        if (target.length == 1) return target[0] == 1;
+        while (true) {
+            long sum = 0;
+            int max = Integer.MIN_VALUE;
+            int maxId = -1;
+            for (int i = 0; i < target.length; i++) {
+                int num = target[i];
+                sum += num;
+                if (num > max) {
+                    max = num;
+                    maxId = i;
+                }
+
+            }
+            if (sum == target.length) return true;
+            long prev = max % (sum - max);
+            if (prev == 0) prev = sum - max;
+
+            if (prev == max) return false;
+            target[maxId] = (int) prev;
+
+        }
+    }
+}
