@@ -5,10 +5,9 @@ import java.util.Arrays;
 public class D19_MinimumMovesToEqualArrayElementsII {
     public static void main(String[] args) {
         MinimumMovesToEqualArrayElementsIISolution solution = new MinimumMovesToEqualArrayElementsIISolution();
-        System.out.println(solution.minMoves2(new int[]{1, 2, 3}));
+        System.out.println(solution.minMoves2(new int[]{0, 1, 6, 8}));
     }
 }
-
 
 class MinimumMovesToEqualArrayElementsIISolution {
     public int minMoves2(int[] nums) {
@@ -21,6 +20,21 @@ class MinimumMovesToEqualArrayElementsIISolution {
     }
 }
 
+// Wrong solution
+class MinimumMovesToEqualArrayElementsIISolution3 {
+    public int minMoves2(int[] nums) {
+        int sum = 0;
+        for (int i : nums) {
+            sum += i;
+        }
+
+        int answer = 0, median = sum / nums.length;
+        for (int num : nums) {
+            answer += Math.abs(median - num);
+        }
+        return answer;
+    }
+}
 
 class MinimumMovesToEqualArrayElementsIISolution2 {
     public int minMoves2(int[] nums) {
