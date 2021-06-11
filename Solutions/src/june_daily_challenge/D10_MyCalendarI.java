@@ -27,9 +27,9 @@ class MyCalendarSolution {
 
 
 class MyCalendarSolution2 {
-    class Node {
-        private int start;
-        private int end;
+    static class Node {
+        private final int start;
+        private final int end;
         private Node left;
         private Node right;
 
