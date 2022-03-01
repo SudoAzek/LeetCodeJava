@@ -34,3 +34,51 @@ class Solution_Counting_Bits2 {
 
     }
 }
+
+class Solution_Counting_Bits3 {
+    public int[] countBits(int n) {
+        int[] result = new int[n + 1];
+
+        for (int i = 0; i <= n; i++) {
+            result[i] = solveFor(i);
+        }
+        return result;
+    }
+
+    public int solveFor(int n) {
+        if (n == 0 || n == 1) return n;
+
+        if (n % 2 == 0) {
+            return solveFor(n / 2);
+        } else {
+            return 1 + solveFor(n / 2);
+        }
+    }
+}
+
+class Solution_Counting_Bits3_with_Memo {
+    public int[] countBits(int n) {
+        int result[] = new int[n + 1];
+
+        for (int i = 0; i <= n; i++) {
+            result[i] = solveFor(i, result);
+        }
+
+        return result;
+    }
+
+    public int solveFor(int n, int[] memo) {
+        if (n == 0 || n == 1) return n;
+
+        if (memo[n] != 0) {
+            return memo[n];
+        }
+        if (n % 2 == 0) {
+            memo[n] = solveFor(n / 2, memo);
+            return memo[n];
+        } else {
+            memo[n] = 1 + solveFor(n / 2, memo);
+            return memo[n];
+        }
+    }
+}
