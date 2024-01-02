@@ -9,6 +9,34 @@ public class P3_Longest_Substring_Without_Repeating_Characters {
         Solution_Longest_Substring_Without_Repeating_Characters1 sol1 = new Solution_Longest_Substring_Without_Repeating_Characters1();
         System.out.println(sol.lengthOfLongestSubstring("abcabcbb"));
         System.out.println(sol1.lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(lengthOfLongestSubstring("abcabcbb"));
+    }
+
+    public static int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+
+        int res = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                if (check(s, i, j)) res = Math.max(res, j - i + 1);
+            }
+        }
+        return res;
+    }
+
+    private static boolean check(String s, int start, int end) {
+        int[] chars = new int[128];
+        for (int i = start; i <= end ; i++) {
+            char c = s.charAt(i);
+            chars[c]++;
+            if (chars[c] > 1) return false;
+        }
+        return true;
+    }
+
+
+    public static int lengthOfLongestSubstring2(String s) {
+        return 1;
     }
 }
 

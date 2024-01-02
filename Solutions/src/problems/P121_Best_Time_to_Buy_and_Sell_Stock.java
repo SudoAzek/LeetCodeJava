@@ -21,4 +21,18 @@ class Solution_Best_Time_to_Buy_and_Sell_Stock {
         }
         return max;
     }
+
+    public int maxProfit2(int[] prices) {
+        int maxProfit = Integer.MIN_VALUE;
+        int buyPointer = 0;
+
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] < prices[buyPointer]) {
+                buyPointer = i;
+            } else {
+                maxProfit = Math.max(maxProfit, prices[i] - prices[buyPointer]);
+            }
+        }
+        return (maxProfit < 0 ? 0 : maxProfit);
+    }
 }

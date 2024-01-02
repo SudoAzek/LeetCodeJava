@@ -81,8 +81,9 @@ public class P273_Integer_to_English_Words {
 
         int billion = num / 1000000000;
         int million = (num - billion * 1000000000) / 1000000;
-        int thousand = (num - billion * 1000000000 - million * 100000) / 1000;
-        int rest = num - billion * 1000000000 - million * 100000 - thousand * 1000;
+        int thousand = (num - billion * 1000000000 - million * 1000000) / 1000;
+        int rest = num - billion * 1000000000 - million * 1000000 - thousand * 1000;
+
 
         String result = "";
         if (billion != 0)
